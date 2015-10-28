@@ -5,3 +5,112 @@
 body {
   background: #e2ebf3;
 }
+
+.app {
+  border: 1px solid black;
+  margin: 10% 25%;
+}
+
+.people-list {
+  h1{
+    text-align: center;
+  }
+  ul{
+    list-style: none; 
+    padding-left: 0;
+    margin-left: 10px;
+  }
+  li{
+    font-size: 20px;
+    border-top: 1px dotted black;
+    padding-top: 10px;
+    i{
+      margin-right: 20px;
+      margin-bottom: 5px;
+    }
+
+  }
+  li:hover{
+    background-color: grey;
+  }
+  .newPersonBtn{
+    margin: 5px 40%;
+    border: none;
+    background-color: none;
+    border-radius: 5px;
+    &:hover{
+      border: 2px solid red;
+    }
+  }
+}
+
+.whoops{
+  margin: 5px 30%;
+  border: none;
+  background-color: none;
+  border-radius: 5px;
+  &:hover{
+    border: 2px solid red;
+  }
+}
+
+.fa{
+  padding-right: 5px;
+}
+
+.newTitle{
+  color: #1A3578;
+  margin: 10px 25%;
+}
+
+.addNewContact {
+  padding: 10px;
+  input{
+    display: block;
+    padding: 10px;
+    margin: 10px;
+    width: 95%;
+  }
+}
+
+.saveContact {
+  margin: 5px 38%;
+  border: none;
+  background-color: none;
+  border-radius: 5px;
+  &:hover{
+    border: 2px solid red;
+  }
+}
+
+.person{
+  h2{
+    font-size: 20px;
+    color: #1A3578;
+    margin: 10px 34%;
+  }
+  ul{
+    list-style: none; 
+    padding-left: 0;
+    margin-left: 10px;
+  }
+  li{
+    font-size: 20px;
+    border-top: 1px dotted black;
+    padding-top: 20px;
+  }
+  span{
+      color: green;
+      font-weight: bold;
+
+  }
+  .abc{
+    margin: 5px;
+    border: none;
+    background-color: none;
+    border-radius: 5px;
+    &:hover{
+      border: 2px solid red;
+    }
+  }
+}
