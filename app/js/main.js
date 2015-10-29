@@ -189,6 +189,19 @@ exports['default'] = _backbone2['default'].Router.extend({
 		this.$el.on('click', '.newPersonBtn', function (event) {
 			_this.navigate('newContact', { trigger: true });
 		});
+
+		this.$el.on('click', '.saveContact', function (event) {
+			var newFriend = new _resources.Person({
+				Name: (0, _jquery2['default'])('#name').val(),
+				Email: (0, _jquery2['default'])('#email').val(),
+				PhoneNumber: (0, _jquery2['default'])('#number').val(),
+				Location: (0, _jquery2['default'])('#city').val()
+			});
+
+			newFriend.save();
+
+			_this.navigate('people', { trigger: true });
+		});
 	},
 
 	redirectToPeople: function redirectToPeople() {
@@ -226,30 +239,8 @@ exports['default'] = _backbone2['default'].Router.extend({
 	},
 
 	addNew: function addNew() {
-		var _this4 = this;
-
 		this.showSpinner();
-
 		this.$el.html(_views.newContactTemplate);
-
-		this.$el.on('click', '.saveContact', function (event) {
-			console.log(event);
-			var newFriend = new _resources.Person({
-				Name: (0, _jquery2['default'])('#name').val(),
-				Email: (0, _jquery2['default'])('#email').val(),
-				PhoneNumber: (0, _jquery2['default'])('#number').val(),
-				Location: (0, _jquery2['default'])('#city').val()
-			});
-
-			// adds newfriend to the database
-			newFriend.save().then(function () {
-				_this4.navigate('people', { trigger: true });
-			});
-
-			// let $button = $(event.currentTarget);
-			// let route = $button.data('to');
-			// this.navigate(route, {trigger: true});
-		});
 	},
 
 	showSpinner: function showSpinner() {

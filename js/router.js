@@ -39,9 +39,22 @@ export default Backbone.Router.extend({
 			this.navigate(route, {trigger: true});
 		});
 
-		this.$el.on('click', ('.newPersonBtn'), (event) => {
+		this.$el.on('click', '.newPersonBtn', (event) => {
 			this.navigate(`newContact`, {trigger: true});
 		});
+
+		this.$el.on('click', '.saveContact', (event) => {
+	    let newFriend = new Person({
+	      Name : $('#name').val(),
+	      Email: $('#email').val(),
+	      PhoneNumber: $('#number').val(),
+	      Location: $('#city').val()
+	    });
+
+  		newFriend.save();
+
+			this.navigate(`people`, {trigger: true});
+    });
 	},
 
 	redirectToPeople() {
@@ -88,23 +101,8 @@ export default Backbone.Router.extend({
 
 	addNew() {
 		this.showSpinner();
-
 		this.$el.html(newContactTemplate);
-
-    this.$el.on('click', '.saveContact', (event) => {
-      let newFriend = new Person({
-        Name : $('#name').val(),
-        Email: $('#email').val(),
-        PhoneNumber: $('#number').val(),
-        Location: $('#city').val()
-      });
-
-      newFriend.save().then( () => {
-      	this.navigate(`people`, {trigger: true});
-      });
-
-    })
-	},
+  },
 
 	showSpinner() {
 		this.$el.html( Spinner() );
