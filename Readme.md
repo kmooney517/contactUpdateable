@@ -1,6 +1,9 @@
 ## Welcome to My Project
 
-> I am your Readme.md file, you should probably update me.
+> Link: http://six-throne.surge.sh/#people
+
+> Similar to the previous contact list - this version however allows a user to add a new contact to the list via the provided url.
+> Delete function is not set up.
 
 
 ## Usage
